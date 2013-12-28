@@ -44,6 +44,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -73,6 +75,8 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>C:\SFML-2.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,22 +86,41 @@
       <AdditionalLibraryDirectories>C:\SFML-2.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AI.cpp" />
+    <ClCompile Include="AIGraphicComponent.cpp" />
+    <ClCompile Include="AIPhysicComponent.cpp" />
     <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GraphicComponent.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Paddle.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerEventComponent.cpp" />
+    <ClCompile Include="PlayerGraphicComponent.cpp" />
+    <ClCompile Include="PlayerPhysicComponent.cpp" />
     <ClCompile Include="Pong.cpp" />
+    <ClCompile Include="World.cpp" />
     <ClCompile Include="Xbox360.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AI.h" />
+    <ClInclude Include="AIGraphicComponent.h" />
+    <ClInclude Include="AIPhysicComponent.h" />
     <ClInclude Include="Ball.h" />
-    <ClInclude Include="Paddle.h" />
+    <ClInclude Include="EventComponent.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GraphicComponent.h" />
+    <ClInclude Include="PhysicComponent.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerEventComponent.h" />
+    <ClInclude Include="PlayerGraphicComponent.h" />
+    <ClInclude Include="PlayerPhysicComponent.h" />
     <ClInclude Include="Pong.h" />
+    <ClInclude Include="World.h" />
     <ClInclude Include="Xbox360.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

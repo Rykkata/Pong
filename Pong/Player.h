@@ -1,9 +1,12 @@
 #pragma once
-class Player
+#include "GameObject.h"
+
+class Player :GameObject
 {
 public:
-	Player();
+	Player(EventComponent* eventComponent, GraphicComponent* graphicComponent, PhysicComponent* physicComponent);
 	~Player();
+	int Update(sf::RenderWindow world);
 private:
 };
 

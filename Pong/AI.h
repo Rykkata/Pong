@@ -1,8 +1,10 @@
 #pragma once
-class AI
+#include "GameObject.h"
+class AI :GameObject
 {
 public:
-	AI();
+	AI(EventComponent* eventComponent, GraphicComponent* graphicComponent, PhysicComponent* physicComponent);
 	~AI();
+	int Update(sf::RenderWindow world);
 };
 

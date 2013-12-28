@@ -1,8 +1,10 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 class Pong
 {
-public:
-	Pong();
+public:;
+	static Pong& GetInstance(void);
 	~Pong();
+	void RunGame(void);
 };
 
