@@ -82,4 +82,9 @@ bool xb360::LeftThumbRight()
 	return (GetState().Gamepad.sThumbLX > XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE);
 }
 
+bool xb360::LeftThumbNeut()
+{
+	return (!LeftThumbDown() && !LeftThumbUp() && !LeftThumbLeft() && !LeftThumbRight());
+}
+
 

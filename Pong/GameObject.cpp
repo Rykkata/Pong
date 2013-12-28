@@ -24,3 +24,10 @@ int GameObject::Update(sf::RenderWindow* world)
 
 	return 0;
 }
+
+int GameObject::Draw(sf::RenderWindow* world)
+{
+	m_graphicComponent->Update(this, world);
+
+	return 0;
+}

@@ -3,6 +3,7 @@
 
 PlayerGraphicComponent::PlayerGraphicComponent(char* filePath) : GraphicComponent(filePath)
 {
+
 }
 
 

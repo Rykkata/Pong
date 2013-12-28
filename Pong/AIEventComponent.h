@@ -6,6 +6,6 @@ class AIEventComponent :
 public:
 	AIEventComponent();
 	~AIEventComponent();
-	int Update(GameObject* gameObeject);
+	virtual int Update(GameObject* gameObeject);
 };
 

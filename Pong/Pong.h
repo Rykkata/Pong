@@ -9,5 +9,7 @@ public:;
 	static Pong& GetInstance(void);
 	~Pong();
 	void RunGame(void);
+private:
+	sf::Time m_timer;
 };
 

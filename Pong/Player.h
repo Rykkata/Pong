@@ -6,7 +6,7 @@ class Player : public GameObject
 public:
 	Player(EventComponent* eventComponent, GraphicComponent* graphicComponent, PhysicComponent* physicComponent);
 	~Player();
-	int Update(sf::RenderWindow* world);
+	virtual int Update(sf::RenderWindow* world);
 private:
 };
 

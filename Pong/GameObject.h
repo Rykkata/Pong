@@ -11,7 +11,7 @@ public:
 	GameObject(EventComponent* eventComponent, GraphicComponent* graphicComponent, PhysicComponent* physicComponent);
 	~GameObject();
 	virtual int Update(sf::RenderWindow* world);
-
+	virtual int Draw(sf::RenderWindow* world);
 	int x_velocity, y_veloicity;			// Current Velocity
 	float x, y;								// The position of the object
 	int width, height;						// The width and heigh of the object

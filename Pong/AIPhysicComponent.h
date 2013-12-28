@@ -6,6 +6,6 @@ class AIPhysicComponent :
 public:
 	AIPhysicComponent();
 	~AIPhysicComponent();
-	int Update(GameObject* gameObeject);
+	virtual int Update(GameObject* gameObeject);
 };
 

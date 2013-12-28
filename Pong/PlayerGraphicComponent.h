@@ -6,6 +6,6 @@ class PlayerGraphicComponent :
 public:
 	PlayerGraphicComponent(char* filePath);
 	~PlayerGraphicComponent();
-	int Update(GameObject* gameObject, sf::RenderWindow* world);
+	virtual int Update(GameObject* gameObject, sf::RenderWindow* world);
 };
 

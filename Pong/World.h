@@ -12,10 +12,11 @@ public:
 	World();
 	~World();
 	void AddObject(GameObject* object);
-	void RunGame();
 	void UpdateObjects(void);
-private:
+	void DrawObjects(void);
 	sf::RenderWindow* m_world;
+private:
+
 	std::vector<GameObject*> m_gameObjects;
 };
 

@@ -24,4 +24,5 @@ namespace xb360
 	bool LeftThumbDown();
 	bool LeftThumbLeft();
 	bool LeftThumbRight();
+	bool LeftThumbNeut();
 }

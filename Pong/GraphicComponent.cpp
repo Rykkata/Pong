@@ -6,6 +6,8 @@ GraphicComponent::GraphicComponent(char* filePath)
 	// Create the texture
 	m_texture = new sf::Texture();
 
+	m_texture->loadFromFile(filePath);
+
 	//Create the sprite
 	m_sprite = new sf::Sprite(*m_texture);
 
