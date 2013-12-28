@@ -14,7 +14,10 @@ public:
 	void AddObject(GameObject* object);
 	void UpdateObjects(void);
 	void DrawObjects(void);
-	sf::RenderWindow* m_world;
+	void CollisionDetection(GameObject* object, char* tag);
+	GameObject* FindObjectWithTag(char* tag);
+	sf::RenderWindow* renderWindow;
+	sf::Time deltaTime;
 private:
 
 	std::vector<GameObject*> m_gameObjects;

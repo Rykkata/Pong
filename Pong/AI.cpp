@@ -12,7 +12,7 @@ AI::~AI()
 
 }
 
-int AI::Update(sf::RenderWindow* world)
+int AI::Update(World* world)
 {
 	GameObject::Update(world);
 

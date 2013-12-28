@@ -6,6 +6,6 @@ class PlayerPhysicComponent :
 public:
 	PlayerPhysicComponent();
 	~PlayerPhysicComponent();
-	virtual int Update(GameObject* gameObeject);
+	virtual int Update(GameObject* gameObeject, World* world);
 };
 

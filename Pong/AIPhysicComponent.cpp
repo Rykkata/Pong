@@ -10,7 +10,7 @@ AIPhysicComponent::~AIPhysicComponent()
 {
 }
 
-int AIPhysicComponent::Update(GameObject* gameObject)
+int AIPhysicComponent::Update(GameObject* gameObject, World* world)
 {
 	return 0;
 }

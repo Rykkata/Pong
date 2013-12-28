@@ -5,14 +5,14 @@
 #include <iostream>
 World::World() : m_gameObjects()
 {
-	m_world = new sf::RenderWindow(sf::VideoMode(800, 600), "Pong");
+	renderWindow = new sf::RenderWindow(sf::VideoMode(800, 600), "Pong");
 }
 
 
 World::~World()
 {
 	m_gameObjects.clear();
-	delete m_world;
+	delete renderWindow;
 }
 
 void World::AddObject(GameObject* object)
@@ -23,11 +23,11 @@ void World::AddObject(GameObject* object)
 void World::UpdateObjects(void)
 {
 	for (int i = 0; i < m_gameObjects.size(); i++)
-		m_gameObjects[i]->Update(m_world);
+		m_gameObjects[i]->Update(this);
 }
 
 void World::DrawObjects(void)
 {
 	for (int i = 0; i < m_gameObjects.size(); i++)
-		m_gameObjects[i]->Draw(m_world);
+		m_gameObjects[i]->Draw(this);
 }

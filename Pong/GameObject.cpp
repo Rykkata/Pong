@@ -16,16 +16,16 @@ GameObject::~GameObject()
 	delete m_physicComponent;
 }
 
-int GameObject::Update(sf::RenderWindow* world)
+int GameObject::Update(World* world)
 {
 	m_eventComponent->Update(this);
-	m_physicComponent->Update(this);
+	m_physicComponent->Update(this, world);
 	m_graphicComponent->Update(this, world);
 
 	return 0;
 }
 
-int GameObject::Draw(sf::RenderWindow* world)
+int GameObject::Draw(World* world)
 {
 	m_graphicComponent->Update(this, world);
 

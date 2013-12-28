@@ -12,7 +12,7 @@ Player::~Player()
 
 }
 
-int Player::Update(sf::RenderWindow* world)
+int Player::Update(World* world)
 {
 	GameObject::Update(world);
 

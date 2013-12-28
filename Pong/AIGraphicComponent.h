@@ -6,6 +6,6 @@ class AIGraphicComponent :
 public:
 	AIGraphicComponent(char* filePath);
 	~AIGraphicComponent();
-	virtual int Update(GameObject* gameObject, sf::RenderWindow* world);
+	virtual int Update(GameObject* gameObject, World* world);
 };
 

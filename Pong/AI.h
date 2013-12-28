@@ -5,6 +5,6 @@ class AI : public GameObject
 public:
 	AI(EventComponent* eventComponent, GraphicComponent* graphicComponent, PhysicComponent* physicComponent);
 	~AI();
-	virtual int Update(sf::RenderWindow* world);
+	virtual int Update(World* world);
 };
 
