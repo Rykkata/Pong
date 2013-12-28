@@ -11,3 +11,10 @@ AI::~AI()
 {
 
 }
+
+int AI::Update(sf::RenderWindow* world)
+{
+	GameObject::Update(world);
+
+	return 0;
+}

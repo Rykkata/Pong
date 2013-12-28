@@ -10,3 +10,10 @@ Player::~Player()
 {
 
 }
+
+int Player::Update(sf::RenderWindow* world)
+{
+	GameObject::Update(world);
+
+	return 0;
+}

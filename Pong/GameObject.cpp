@@ -21,4 +21,6 @@ int GameObject::Update(sf::RenderWindow* world)
 	m_eventComponent->Update(this);
 	m_graphicComponent->Update(this, world);
 	m_physicComponent->Update(this);
+
+	return 0;
 }
