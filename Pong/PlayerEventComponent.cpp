@@ -17,11 +17,11 @@ PlayerEventComponent::~PlayerEventComponent()
 int PlayerEventComponent::Update(GameObject* gameObject)
 {
 	if (xb360::LeftThumbUp())
-		gameObject->y_veloicity = VELOCITY_UP;
+		gameObject->y_velocity = VELOCITY_UP;
 	else if (xb360::LeftThumbDown())
-		gameObject->y_veloicity = VELOCITY_DOWN;
+		gameObject->y_velocity = VELOCITY_DOWN;
 	else
-		gameObject->y_veloicity = 0;
+		gameObject->y_velocity = 0;
 
 	return 0;
 }

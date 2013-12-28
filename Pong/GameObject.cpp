@@ -1,7 +1,7 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject(EventComponent* eventComponent, GraphicComponent* graphicComponent, PhysicComponent* physicComponent)
+GameObject::GameObject(EventComponent* eventComponent, GraphicComponent* graphicComponent, PhysicComponent* physicComponent) : x(0), y(0), boundingBox()
 {
 	m_eventComponent = eventComponent;
 	m_graphicComponent = graphicComponent;
@@ -9,6 +9,11 @@ GameObject::GameObject(EventComponent* eventComponent, GraphicComponent* graphic
 
 	width  = m_graphicComponent->width;
 	height = m_graphicComponent->height;
+
+	boundingBox.left = x;
+	boundingBox.top = y;
+	boundingBox.width = (float)width;
+	boundingBox.height = (float)height;
 }
 
 

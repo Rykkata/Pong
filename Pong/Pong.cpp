@@ -44,14 +44,14 @@ void Pong::RunGame(void)
 	Player* player = new Player(new PlayerEventComponent(), new PlayerGraphicComponent(PADDLE_PATH), new PlayerPhysicComponent());
 	player->x = PLAYER_X;
 	player->y = PLAYER_Y;
-	player->x_velocity = player->y_veloicity = 0;
+	player->x_velocity = player->y_velocity = 0;
 	player->tag = "Player";
 
 	// Create the AI and set its position
 	AI* ai = new AI(new AIEventComponent(), new AIGraphicComponent(PADDLE_PATH), new AIPhysicComponent());
 	ai->x = AI_X;
 	ai->y = AI_Y;
-	ai->x_velocity = ai->y_veloicity = 0;
+	ai->x_velocity = ai->y_velocity = 0;
 	ai->tag = "AI";
 
 	// Add the objects to the world
@@ -62,7 +62,6 @@ void Pong::RunGame(void)
 	while (gameWorld->renderWindow->isOpen())
 	{
 		gameWorld->deltaTime = gameClock.restart();
-	//	m_timer += gameWorld->deltaTime;
 
 		sf::Event event;
 		while (gameWorld->renderWindow->pollEvent(event))
@@ -71,29 +70,9 @@ void Pong::RunGame(void)
 				gameWorld->renderWindow->close();
 		}
 
-		// Redraw the screen
+		// Redraw the screen and update the objects
 		gameWorld->renderWindow->clear();
-
 		gameWorld->UpdateObjects();
-
-		/*
-		if (m_timer.asMicroseconds() / TICK_RATE > 2) // Something happened, reset it
-		{
-			m_timer = m_timer.Zero;
-			gameWorld->deltaTime = gameWorld->deltaTime.Zero;
-		}
-
-		if (m_timer.asMicroseconds() >= TICK_RATE)
-		{
-			m_timer -= sf::microseconds(TICK_RATE);
-		
-			
-		}
-		else
-		{
-			gameWorld->DrawObjects();
-		}*/
-			
 		gameWorld->renderWindow->display();
 
 	}

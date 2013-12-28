@@ -14,7 +14,8 @@ public:
 	void AddObject(GameObject* object);
 	void UpdateObjects(void);
 	void DrawObjects(void);
-	void CollisionDetection(GameObject* object, char* tag);
+	bool CollisionDetection(GameObject* object, char* tag);
+	bool CanMoveTo(float x, float y, int width, int height);
 	GameObject* FindObjectWithTag(char* tag);
 	sf::RenderWindow* renderWindow;
 	sf::Time deltaTime;
