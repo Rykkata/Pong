@@ -4,7 +4,8 @@ class PlayerGraphicComponent :
 	public GraphicComponent
 {
 public:
-	PlayerGraphicComponent(char* filePath);
+	PlayerGraphicComponent(GameObject* gameObject, char* filePath);
 	~PlayerGraphicComponent();
+	int Update(GameObject* gameObject, sf::RenderWindow* world);
 };
 

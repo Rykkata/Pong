@@ -6,5 +6,6 @@ class PlayerEventComponent :
 public:
 	PlayerEventComponent();
 	~PlayerEventComponent();
+	int Update(GameObject* gameObeject);
 };
 

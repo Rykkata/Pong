@@ -6,5 +6,6 @@ class PlayerPhysicComponent :
 public:
 	PlayerPhysicComponent();
 	~PlayerPhysicComponent();
+	int Update(GameObject* gameObeject);
 };
 

@@ -4,7 +4,8 @@ class AIGraphicComponent :
 	public GraphicComponent
 {
 public:
-	AIGraphicComponent(char* filePath);
+	AIGraphicComponent(GameObject* gameObject, char* filePath);
 	~AIGraphicComponent();
+	int Update(GameObject* gameObject, sf::RenderWindow* world);
 };
 
