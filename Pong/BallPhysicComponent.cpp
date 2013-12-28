@@ -26,11 +26,15 @@ int BallPhysicComponent::Update(GameObject* gameObject, World* world)
 	}
 	else if (newX <= 0)								   // Player Scored
 	{
-
+		gameObject->y = newY;
+		gameObject->x_velocity = -gameObject->x_velocity;
+		gameObject->boundingBox.top = gameObject->y;
 	}
-	else if (newX >= world->renderWindow->getSize().x) // AI Scored
+	else if (newX + gameObject->width >= world->renderWindow->getSize().x) // AI Scored
 	{
-
+		gameObject->y = newY;
+		gameObject->x_velocity = -gameObject->x_velocity;
+		gameObject->boundingBox.top = gameObject->y;
 	}
 	else  											   // Hit the top or bottom of the screenof the screen
 	{

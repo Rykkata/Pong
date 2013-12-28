@@ -123,6 +123,10 @@
     <ClInclude Include="World.h" />
     <ClInclude Include="Xbox360.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Ball.png" />
+    <Image Include="Paddle.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
