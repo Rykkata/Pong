@@ -15,10 +15,6 @@ int AIGraphicComponent::Update(GameObject* gameObject, World* world)
 {
 	m_sprite->setPosition(gameObject->x, gameObject->y);
 
-	// Set the game objects width and height
-	gameObject->width = m_texture->getSize().x;
-	gameObject->height = m_texture->getSize().y;
-
 	world->renderWindow->draw(*m_sprite);
 
 	return 0;

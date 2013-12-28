@@ -18,7 +18,7 @@
 #define PLAYER_X 720
 #define PLAYER_Y 20
 
-#define AI_X 20
+#define AI_X 60
 #define AI_Y 20
 
 #define TICK_RATE 16667
@@ -62,7 +62,7 @@ void Pong::RunGame(void)
 	while (gameWorld->renderWindow->isOpen())
 	{
 		gameWorld->deltaTime = gameClock.restart();
-		m_timer += gameWorld->deltaTime;
+	//	m_timer += gameWorld->deltaTime;
 
 		sf::Event event;
 		while (gameWorld->renderWindow->pollEvent(event))
@@ -74,22 +74,25 @@ void Pong::RunGame(void)
 		// Redraw the screen
 		gameWorld->renderWindow->clear();
 
+		gameWorld->UpdateObjects();
+
+		/*
+		if (m_timer.asMicroseconds() / TICK_RATE > 2) // Something happened, reset it
+		{
+			m_timer = m_timer.Zero;
+			gameWorld->deltaTime = gameWorld->deltaTime.Zero;
+		}
+
 		if (m_timer.asMicroseconds() >= TICK_RATE)
 		{
 			m_timer -= sf::microseconds(TICK_RATE);
-
-			if (m_timer.asMicroseconds() / TICK_RATE > 2) // Something happened, reset it
-			{
-				m_timer = m_timer.Zero;
-				gameWorld->deltaTime = gameWorld->deltaTime.Zero;
-			}
-				
-			gameWorld->UpdateObjects();
+		
+			
 		}
 		else
 		{
 			gameWorld->DrawObjects();
-		}
+		}*/
 			
 		gameWorld->renderWindow->display();
 

@@ -6,6 +6,9 @@ GameObject::GameObject(EventComponent* eventComponent, GraphicComponent* graphic
 	m_eventComponent = eventComponent;
 	m_graphicComponent = graphicComponent;
 	m_physicComponent = physicComponent;
+
+	width  = m_graphicComponent->width;
+	height = m_graphicComponent->height;
 }
 
 

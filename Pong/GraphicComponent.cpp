@@ -8,10 +8,10 @@ GraphicComponent::GraphicComponent(char* filePath)
 
 	m_texture->loadFromFile(filePath);
 
+	width  = m_texture->getSize().x;
+	height = m_texture->getSize().y;
 	//Create the sprite
 	m_sprite = new sf::Sprite(*m_texture);
-
-
 }
 
 GraphicComponent::~GraphicComponent()

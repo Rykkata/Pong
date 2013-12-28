@@ -2,8 +2,8 @@
 #include "Xbox360.h"
 #include "GameObject.h"
 
-#define VELOCITY_UP -10
-#define VELOCITY_DOWN 10
+#define VELOCITY_UP -100
+#define VELOCITY_DOWN 100
 
 PlayerEventComponent::PlayerEventComponent()
 {
