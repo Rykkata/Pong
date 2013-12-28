@@ -45,16 +45,16 @@
     <ClCompile Include="World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AIEventComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MoveablePhysicComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MoveableGraphicComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BallEventComponent.cpp">
+    <ClCompile Include="BallPhysicComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NPCEventComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,16 +92,16 @@
     <ClInclude Include="World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AIEventComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MoveablePhysicComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MoveableGraphicComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BallEventComponent.h">
+    <ClInclude Include="BallPhysicComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NPCEventComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

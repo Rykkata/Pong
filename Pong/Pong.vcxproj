@@ -92,9 +92,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AI.cpp" />
-    <ClCompile Include="AIEventComponent.cpp" />
+    <ClCompile Include="NPCEventComponent.cpp" />
     <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="BallEventComponent.cpp" />
+    <ClCompile Include="BallPhysicComponent.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GraphicComponent.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -108,9 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AI.h" />
-    <ClInclude Include="AIEventComponent.h" />
+    <ClInclude Include="NPCEventComponent.h" />
     <ClInclude Include="Ball.h" />
-    <ClInclude Include="BallEventComponent.h" />
+    <ClInclude Include="BallPhysicComponent.h" />
     <ClInclude Include="EventComponent.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GraphicComponent.h" />

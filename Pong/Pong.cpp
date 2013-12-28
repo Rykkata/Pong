@@ -9,11 +9,13 @@
 
 // AI Components
 #include "AI.h"
-#include "AIEventComponent.h"
+#include "NPCEventComponent.h"
 
 // Ball Components
 #include "Ball.h"
-#include "BallEventComponent.h"
+#include "BallPhysicComponent.h"
+
+// NPC Components
 
 // Moveable Components
 #include "MoveablePhysicComponent.h"
@@ -65,14 +67,14 @@ void Pong::RunGame(void)
 	player->tag = "Player";
 
 	// Create the AI and set its position
-	AI* ai = new AI(new AIEventComponent(), new MoveableGraphicComponent(PADDLE_PATH), new MoveablePhysicComponent());
+	AI* ai = new AI(new NPCEventComponent(), new MoveableGraphicComponent(PADDLE_PATH), new MoveablePhysicComponent());
 	ai->x = AI_X;
 	ai->y = AI_Y;
 	ai->x_velocity = ai->y_velocity = 0;
 	ai->tag = "AI";
 
 	// Create the ball and set it up
-	Ball* ball = new Ball(new BallEventComponent(), new MoveableGraphicComponent(BALL_PATH), new MoveablePhysicComponent);
+	Ball* ball = new Ball(new NPCEventComponent(), new MoveableGraphicComponent(BALL_PATH), new BallPhysicComponent());
 	ball->x = BALL_X;
 	ball->y = BALL_Y;
 	ball->x_velocity = BALL_X_VEL;

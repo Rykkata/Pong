@@ -1,11 +1,11 @@
 #pragma once
 #include "EventComponent.h"
-class AIEventComponent :
+class NPCEventComponent :
 	public EventComponent
 {
 public:
-	AIEventComponent();
-	~AIEventComponent();
+	NPCEventComponent();
+	~NPCEventComponent();
 	virtual int Update(GameObject* gameObeject);
 };
 
