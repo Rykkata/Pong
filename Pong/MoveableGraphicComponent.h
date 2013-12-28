@@ -1,11 +1,11 @@
 #pragma once
 #include "GraphicComponent.h"
-class PlayerGraphicComponent :
+class MoveableGraphicComponent :
 	public GraphicComponent
 {
 public:
-	PlayerGraphicComponent(char* filePath);
-	~PlayerGraphicComponent();
+	MoveableGraphicComponent(char* filePath);
+	~MoveableGraphicComponent();
 	virtual int Update(GameObject* gameObject, World* world);
 };
 

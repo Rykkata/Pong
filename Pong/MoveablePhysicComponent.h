@@ -1,11 +1,11 @@
 #pragma once
 #include "PhysicComponent.h"
-class PlayerPhysicComponent :
+class MoveablePhysicComponent :
 	public PhysicComponent
 {
 public:
-	PlayerPhysicComponent();
-	~PlayerPhysicComponent();
+	MoveablePhysicComponent();
+	~MoveablePhysicComponent();
 	virtual int Update(GameObject* gameObeject, World* world);
 };
 

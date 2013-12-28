@@ -1,17 +1,17 @@
-#include "AIPhysicComponent.h"
+#include "MoveablePhysicComponent.h"
 #include "GameObject.h"
 #include "World.h"
 
-AIPhysicComponent::AIPhysicComponent()
+MoveablePhysicComponent::MoveablePhysicComponent()
 {
 }
 
 
-AIPhysicComponent::~AIPhysicComponent()
+MoveablePhysicComponent::~MoveablePhysicComponent()
 {
 }
 
-int AIPhysicComponent::Update(GameObject* gameObject, World* world)
+int MoveablePhysicComponent::Update(GameObject* gameObject, World* world)
 {
 	float newX = gameObject->x + gameObject->x_velocity * world->deltaTime.asSeconds();
 	float newY = gameObject->y + gameObject->y_velocity * world->deltaTime.asSeconds();
@@ -24,6 +24,6 @@ int AIPhysicComponent::Update(GameObject* gameObject, World* world)
 		gameObject->boundingBox.left = gameObject->x;
 		gameObject->boundingBox.top = gameObject->y;
 	}
-
+	
 	return 0;
 }

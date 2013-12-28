@@ -1,26 +1,43 @@
 #include "Pong.h"
+
+// World
 #include "World.h"
-#include "Player.h"
-#include "AI.h"
 
 // Player Components
+#include "Player.h"
 #include "PlayerEventComponent.h"
-#include "PlayerPhysicComponent.h"
-#include "PlayerGraphicComponent.h"
 
 // AI Components
-#include "AIGraphicComponent.h"
-#include "AIPhysicComponent.h"
+#include "AI.h"
 #include "AIEventComponent.h"
 
-#define PADDLE_PATH "Paddle.png"
+// Ball Components
+#include "Ball.h"
+#include "BallEventComponent.h"
 
+// Moveable Components
+#include "MoveablePhysicComponent.h"
+#include "MoveableGraphicComponent.h"
+
+// The graphic paths
+#define PADDLE_PATH "Paddle.png"
+#define BALL_PATH "Ball.png"
+
+// The player constants
 #define PLAYER_X 720
 #define PLAYER_Y 20
 
+// The AI constants
 #define AI_X 60
 #define AI_Y 20
 
+// The ball constants
+#define BALL_X 395
+#define BALL_Y 295
+#define BALL_X_VEL 100
+#define BALL_Y_VEL 50
+
+// The tick rate, handle for 60 FPS
 #define TICK_RATE 16667
 
 Pong& Pong::GetInstance(void)
@@ -41,22 +58,31 @@ void Pong::RunGame(void)
 	World* gameWorld = new World();
 	
 	// Create the player and set its position
-	Player* player = new Player(new PlayerEventComponent(), new PlayerGraphicComponent(PADDLE_PATH), new PlayerPhysicComponent());
+	Player* player = new Player(new PlayerEventComponent(), new MoveableGraphicComponent(PADDLE_PATH), new MoveablePhysicComponent());
 	player->x = PLAYER_X;
 	player->y = PLAYER_Y;
 	player->x_velocity = player->y_velocity = 0;
 	player->tag = "Player";
 
 	// Create the AI and set its position
-	AI* ai = new AI(new AIEventComponent(), new AIGraphicComponent(PADDLE_PATH), new AIPhysicComponent());
+	AI* ai = new AI(new AIEventComponent(), new MoveableGraphicComponent(PADDLE_PATH), new MoveablePhysicComponent());
 	ai->x = AI_X;
 	ai->y = AI_Y;
 	ai->x_velocity = ai->y_velocity = 0;
 	ai->tag = "AI";
 
+	// Create the ball and set it up
+	Ball* ball = new Ball(new BallEventComponent(), new MoveableGraphicComponent(BALL_PATH), new MoveablePhysicComponent);
+	ball->x = BALL_X;
+	ball->y = BALL_Y;
+	ball->x_velocity = BALL_X_VEL;
+	ball->y_velocity = BALL_Y_VEL;
+	ball->tag = "BALL";
+
 	// Add the objects to the world
 	gameWorld->AddObject(player);
 	gameWorld->AddObject(ai);
+	gameWorld->AddObject(ball);
 
 	// Run the game
 	while (gameWorld->renderWindow->isOpen())
