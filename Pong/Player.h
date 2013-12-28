@@ -1,7 +1,7 @@
 #pragma once
 #include "GameObject.h"
 
-class Player :GameObject
+class Player : public GameObject
 {
 public:
 	Player(EventComponent* eventComponent, GraphicComponent* graphicComponent, PhysicComponent* physicComponent);

@@ -6,7 +6,7 @@ class GameObject;
 class GraphicComponent 
 {
 public:
-	GraphicComponent(GameObject* gameObject, char* filePath);
+	GraphicComponent(char* filePath);
 	~GraphicComponent();
 	virtual int Update(GameObject* gameObject, sf::RenderWindow* world) = 0;
 protected:

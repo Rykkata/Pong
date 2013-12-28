@@ -1,5 +1,25 @@
 #include "Pong.h"
+#include "World.h"
+#include "Player.h"
+#include "AI.h"
 
+// Player Components
+#include "PlayerEventComponent.h"
+#include "PlayerPhysicComponent.h"
+#include "PlayerGraphicComponent.h"
+
+// AI Components
+#include "AIGraphicComponent.h"
+#include "AIPhysicComponent.h"
+#include "AIEventComponent.h"
+
+#define PADDLE_PATH "Paddle.png"
+
+#define PLAYER_X 720
+#define PLAYER_Y 20
+
+#define AI_X 20
+#define AI_Y 20
 
 Pong& Pong::GetInstance(void)
 {
@@ -14,20 +34,23 @@ Pong::~Pong()
 
 void Pong::RunGame(void)
 {
-	// Create the window
-	sf::RenderWindow window(sf::VideoMode(200, 200), "Pong");
+	// Create the game world
+	World* newWorld = new World;
+	
+	// Create the player and set its position
+	Player player(new PlayerEventComponent(), new PlayerGraphicComponent("Paddle.png"), new PlayerPhysicComponent());
+	player.x = 720;
+	player.y = 20;
 
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
+	// Create the AI and set its position
+	AI ai(new AIEventComponent(), new AIGraphicComponent("Paddle.png"), new AIPhysicComponent());
+	ai.x = 20;
+	ai.y = 20;
 
-		// Redraw the screen
-		window.clear();
-		window.display();
-	}
+	// Add the objects to the world
+	newWorld->AddObject(&player);
+	newWorld->AddObject(&ai);
+
+	// Run the game
+	newWorld->RunGame();
 }

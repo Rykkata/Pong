@@ -19,8 +19,8 @@ GameObject::~GameObject()
 int GameObject::Update(sf::RenderWindow* world)
 {
 	m_eventComponent->Update(this);
-	m_graphicComponent->Update(this, world);
 	m_physicComponent->Update(this);
+	m_graphicComponent->Update(this, world);
 
 	return 0;
 }
